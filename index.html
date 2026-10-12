@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#151c1e">
+  <title>Escape the Lab</title>
+  <style>
+    :root{color-scheme:dark;--bg:#151c1e;--panel:#263034;--line:#586568;--cream:#f1f2ec;--muted:#b5c2c2;--yellow:#f2bd54;--red:#e76b61}
+    *{box-sizing:border-box}html,body{min-height:100%;margin:0}body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--cream);background:radial-gradient(circle at 20% 10%,#354044 0,transparent 42%),repeating-linear-gradient(115deg,transparent 0 36px,#ffffff04 37px 38px),var(--bg)}
+    .app{min-height:100svh;max-width:480px;margin:auto;padding:calc(24px + env(safe-area-inset-top)) 22px calc(28px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:22px}
+    .top{display:flex;align-items:center;justify-content:space-between;font-size:11px;letter-spacing:.15em;color:var(--muted)}.led{display:inline-block;width:8px;height:8px;border-radius:50%;background:#85d5a1;box-shadow:0 0 12px #85d5a1;margin-right:8px}
+    .hero{text-align:center;padding:35px 5px 18px}.mark{font-size:52px;color:var(--yellow);line-height:1}.eyebrow{color:var(--yellow);font-size:11px;letter-spacing:.25em;font-weight:800;margin-top:20px}h1{font-size:clamp(36px,11vw,54px);letter-spacing:-.055em;line-height:.96;margin:12px 0 16px;font-weight:900}h1 span{color:var(--yellow)}.subtitle{color:var(--muted);font-size:14px;line-height:1.6;margin:0}
+    .card{border:1px solid #66717466;background:linear-gradient(155deg,#2c373b,#20292c);border-radius:15px;padding:19px;box-shadow:0 14px 35px #0003}.cardhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.cardhead strong{font-size:13px;letter-spacing:.1em}.tag{font-size:11px;border:1px solid #d7a64877;border-radius:5px;padding:5px 7px;color:var(--yellow)}.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:17px}.slot{background:#192225;border:1px solid #536165;border-radius:9px;min-height:75px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;color:#cbd4d4}.slot span{font-size:22px}.slot small{font-size:10px}.slot:first-child{border-color:#d7a648;color:var(--yellow)}
+    button{font:inherit;cursor:pointer;min-height:54px;width:100%;border-radius:10px;font-weight:800;letter-spacing:.03em}button.primary{background:var(--yellow);border:0;color:#1b2324}button.secondary{background:transparent;color:var(--cream);border:1px solid #879598;margin-top:10px}button:active{transform:scale(.985)}.note{color:var(--muted);font-size:12px;line-height:1.55;margin:13px 0 0}.footer{margin-top:auto;text-align:center;color:#9eacac;font-size:11px;letter-spacing:.09em;padding-top:12px}
+    .screen[hidden]{display:none}.back{width:auto;min-height:40px;padding:0 12px;background:transparent;color:var(--cream);border:1px solid var(--line);font-size:12px}.section-title{margin:14px 0 7px;font-size:25px}.field{display:block;font-size:12px;color:var(--muted);margin:20px 0 8px}input{width:100%;min-height:52px;border:1px solid #879598;border-radius:9px;background:#11191c;color:white;padding:12px 14px;font:inherit;font-size:16px}input:focus{outline:2px solid var(--yellow);outline-offset:2px}.warning{border-left:3px solid var(--yellow);padding:10px 12px;background:#f2bd5415;color:#d9dfd8;font-size:13px;line-height:1.55;margin-top:18px}.demo{font-size:12px;color:var(--yellow);font-weight:800;letter-spacing:.08em}
+    @media(min-width:650px){body:before{content:"ANTEPRIMA SMARTPHONE · PORTRAIT";position:fixed;top:20px;left:20px;color:#93a3a4;font-size:11px;letter-spacing:.1em}.app{border-left:1px solid #ffffff12;border-right:1px solid #ffffff12}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header class="top"><span>UNITÀ 04 // ACCESSO</span><span><i class="led"></i>SISTEMA ONLINE*</span></header>
+    <section id="home" class="screen">
+      <div class="hero"><div class="mark" aria-hidden="true">☣</div><div class="eyebrow">PROTOCOLLO DI EVACUAZIONE</div><h1>ESCAPE<br><span>THE LAB</span></h1><p class="subtitle">4 soggetti. 10 esperimenti.<br>Un solo vincitore.</p></div>
+      <div class="card"><div class="cardhead"><strong>STANZA PRIVATA</strong><span class="tag">0 / 4</span></div><div class="slots"><div class="slot"><span>♙</span><small>TU</small></div><div class="slot"><span>+</span><small>INVITO</small></div><div class="slot"><span>+</span><small>INVITO</small></div><div class="slot"><span>+</span><small>INVITO</small></div></div><button class="primary" onclick="show('create')">CREA LABORATORIO →</button><button class="secondary" onclick="show('join')">ENTRA IN UNA STANZA</button><p class="note">Ogni partita si gioca in verticale, su quattro telefoni diversi.</p></div>
+    </section>
+    <section id="create" class="screen" hidden><button class="back" onclick="show('home')">← INDIETRO</button><h2 class="section-title">Crea laboratorio</h2><p class="subtitle">Prepara la tua identità per la prossima partita.</p><label class="field" for="host">IL TUO NICKNAME</label><input id="host" maxlength="18" placeholder="Es. Soggetto 01" autocomplete="nickname"><button class="primary" style="margin-top:18px" onclick="demo('create')">CONTINUA →</button><div class="warning"><span class="demo">VERSIONE DIMOSTRATIVA</span><br>La creazione di stanze e i link d'invito saranno attivati quando collegheremo il multiplayer.</div></section>
+    <section id="join" class="screen" hidden><button class="back" onclick="show('home')">← INDIETRO</button><h2 class="section-title">Entra nel laboratorio</h2><p class="subtitle">Nella versione completa riceverai un link privato da un amico.</p><label class="field" for="guest">IL TUO NICKNAME</label><input id="guest" maxlength="18" placeholder="Es. Soggetto 02" autocomplete="nickname"><button class="primary" style="margin-top:18px" onclick="demo('join')">CONTINUA →</button><div class="warning"><span class="demo">VERSIONE DIMOSTRATIVA</span><br>Non è ancora possibile unirsi a una partita reale.</div></section>
+    <section id="preview" class="screen" hidden><button class="back" onclick="show('home')">← MENU</button><h2 class="section-title">Accesso registrato</h2><p id="hello" class="subtitle"></p><div class="card" style="margin-top:22px"><div class="cardhead"><strong>LABORATORIO 04</strong><span class="tag">DEMO</span></div><p class="note">La tua interfaccia è pronta. Prossimo passo: collegare le stanze private e gli inviti online.</p></div></section>
+    <footer class="footer">ESCAPE THE LAB · PROTOTIPO 0.1</footer>
+  </main>
+  <script>
+    function show(id){document.querySelectorAll('.screen').forEach(s=>s.hidden=s.id!==id);window.scrollTo(0,0)}
+    function demo(type){const name=document.getElementById(type==='create'?'host':'guest').value.trim()||'Soggetto 01';document.getElementById('hello').textContent='Benvenuto, '+name+'. Il laboratorio è in preparazione.';show('preview')}
+  </script>
+</body>
+</html>
